@@ -29,3 +29,7 @@ test('two in a row is not a win', () => {
 test('rejects a card that is not 3x3', () => {
   assert.throws(() => checkWin([true, true, true]), TypeError);
 });
+
+test('a near-miss board is not a win', () => {
+  assert.equal(checkWin(mark(0, 1, 3, 5, 7, 8)), null);
+});
